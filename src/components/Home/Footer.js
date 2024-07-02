@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -17,18 +18,21 @@ function Footer() {
           <div>
             <h2 className="text-lg font-bold">Legal</h2>
             <ul className="p-1">
-              <a href="/disclaimer">
-                <li>Disclaimer</li>
-              </a>
-              <a href="/faq">
-                <li>FAQs</li>
-              </a>
-              <a href="/privacy">
-                <li>Privacy Policy</li>
-              </a>
-              <a href="/tnc">
-                <li>Terms and Conditions</li>
-              </a>
+              <li>
+                <Link to="/disclaimer">Disclaimer</Link>
+              </li>
+              <li>
+                <Link to="/faq">FAQs</Link>
+              </li>
+              <li>
+                <Link to="/privacy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link to="/tnc">Terms and Conditions</Link>
+              </li>
+              <li>
+                <Link to="/sitemap">Sitemap</Link>
+              </li>
             </ul>
           </div>
           <div className="">
@@ -46,11 +50,14 @@ function Footer() {
         </div>
 
         <div className="flex flex-col justify-around p-4 text-white bg-rose-900 md:flex-row ">
-          <div><h2 className="font-bold">Copyright 2022 All Rights Reaserved NIA,JAIPUR</h2></div>
+          <div>
+            <h2 className="font-bold">
+              Copyright 2022 All Rights Reaserved NIA,JAIPUR
+            </h2>
+          </div>
           <div>
             <h2 className="font-bold">Designed by NIA JAIPUR</h2>
           </div>
-          
         </div>
       </div>
     </>

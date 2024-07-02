@@ -47,21 +47,22 @@ function One() {
     checkAndCreateDocument();
   }, [form1Submitted]);
 
-  function generateAlphanumericCode(length) {
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const prefix = "AMMRI";
-    let code = prefix;
+  function generateUniqueId() {
+    const prefix = "AMRRI";
+    const now = new Date();
 
-    for (let i = 0; i < length - prefix.length; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      code += characters.charAt(randomIndex);
-    }
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, "0"); // Month is zero-indexed, so add 1
+    const day = String(now.getDate()).padStart(2, "0");
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+    const seconds = String(now.getSeconds()).padStart(2, "0");
 
-    return code;
+    const uniqueId = `${prefix}-${year}${month}${day}-${hours}${minutes}${seconds}`;
+    return uniqueId;
   }
-
-  const codeLength = 10;
-  const alphanumericCode = generateAlphanumericCode(codeLength);
+  // const codeLength = 10;
+  const alphanumericCode = generateUniqueId();
   // console.log(alphanumericCode);
 
   async function handleForm1Submit(e) {
@@ -270,6 +271,7 @@ function One() {
                 <div className="flex flex-col md:flex-row w-[80%] justify-between">
                   <div className="flex flex-col md:m-4">
                     <label className="flex items-center p-2">
+                      <span className="text-red-600">*</span>:
                       <input
                         type="radio"
                         name="type_of_research"
@@ -279,6 +281,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Collation</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                     <label className="flex items-center p-2">
                       <input
@@ -290,6 +293,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Cataloguing </span>
+                      <span className="text-red-600">*</span>:
                     </label>
                     <label className="flex items-center p-2">
                       <input
@@ -301,6 +305,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Translation</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                   </div>
                   <div className="flex flex-col md:m-4">
@@ -314,6 +319,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Transcription</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                     <label className="flex items-center p-2">
                       <input
@@ -326,6 +332,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Deciphering</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                     <label className="flex items-center p-2">
                       <input
@@ -339,6 +346,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Transliteration</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                   </div>
 
@@ -353,6 +361,7 @@ function One() {
                         required
                       />
                       <span className="ml-2">Others</span>
+                      <span className="text-red-600">*</span>:
                     </label>
                     {form1Data.type_of_research === "custom" && (
                       <label className="flex items-center p-2">
@@ -376,6 +385,7 @@ function One() {
                     4. Attach an authorization document from the
                     Institute/repository, where the MSS is collected *. Files
                     submitted:
+                    <span className="text-red-600">*</span>:
                     <input
                       type="file"
                       id="authorizationDocument"
@@ -504,7 +514,7 @@ function One() {
               <div className="flex flex-row w-[100%] mt-10">
                 <label className="flex flex-col p-2 font-bold w-[50%]">
                   <h4>
-                    5.Name<span className="text-red-600">*</span>:
+                    11.Name<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -519,7 +529,7 @@ function One() {
                 <label className="flex flex-col p-2 w-[50%] font-bold">
                   <h4>
                     {" "}
-                    6.Designation<span className="text-red-600">*</span>:
+                    12.Designation<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -536,7 +546,7 @@ function One() {
               <div className="flex-row flex w-[100%]">
                 <label className="flex flex-col p-2 w-[50%] font-bold">
                   <h4>
-                    7.Affiliation<span className="text-red-600">*</span>:
+                    13.Affiliation<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -550,7 +560,7 @@ function One() {
                 </label>
                 <label className="flex flex-col p-2 w-[50%] font-bold">
                   <h4>
-                    8.Address<span className="text-red-600">*</span>:
+                    14.Address<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -568,7 +578,7 @@ function One() {
                 <label className="flex flex-col p-2  w-[50%] font-bold">
                   <h4>
                     {" "}
-                    9.Phone Number<span className="text-red-600">*</span>:
+                    15.Phone Number<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="tel"
@@ -584,7 +594,7 @@ function One() {
                 <label className="flex flex-col p-2 w-[50%] font-bold">
                   <h4>
                     {" "}
-                    10.Email-id<span className="text-red-600">*</span>:
+                    16.Email-id<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -602,15 +612,13 @@ function One() {
               <br />
               <h2 className="font-bold">
                 Details of Contact person-Public Query{" "}
-                <span className="text-red-600">
-                  (If Same as above then skip)
-                </span>
+                <span className="text-red-600"></span>
               </h2>
               <br />
               <br />
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>11.Name:</h4>
+                  <h4>17.Name:</h4>
                   <input
                     type="text"
                     name="Public_Query_name"
@@ -620,7 +628,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>12.Designation:</h4>
+                  <h4>18.Designation:</h4>
                   <input
                     type="text"
                     name="Public_Query_designation"
@@ -633,7 +641,7 @@ function One() {
 
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>13.Affiliation:</h4>
+                  <h4>19.Affiliation:</h4>
                   <input
                     type="text"
                     name="Public_Query_affiliation"
@@ -647,7 +655,7 @@ function One() {
                   className="flex flex-col  p-2  w-[50%] font-bold"
                   id="part3"
                 >
-                  14.Email Id:
+                  20.Email Id:
                   <input
                     type="text"
                     name="email_id"
@@ -659,7 +667,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  15.Address:
+                  21.Address:
                   <input
                     type="text"
                     name="Prim_Sponsorship_address"
@@ -669,7 +677,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  15.Phone No:
+                  22.Phone No:
                   <input
                     type="text"
                     name="Prim_Sponsorship_Phno"
@@ -685,7 +693,7 @@ function One() {
 
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Name:</h4>
+                  <h4>23Name:</h4>
                   <input
                     type="text"
                     name="Guide_name"
@@ -699,7 +707,7 @@ function One() {
                   className="flex flex-col  p-2  w-[50%] font-bold"
                   id="part3"
                 >
-                  Designation:
+                  24.Designation:
                   <input
                     type="text"
                     name="Guide_designation"
@@ -711,7 +719,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Affiliation:</h4>
+                  <h4>25.Affiliation:</h4>
                   <input
                     type="text"
                     name="Guide_affiliation"
@@ -725,7 +733,7 @@ function One() {
                   className="flex flex-col  p-2  w-[50%] font-bold"
                   id="part3"
                 >
-                  Email Id:
+                  26.Email Id:
                   <input
                     type="text"
                     name="Guide_email"
@@ -737,7 +745,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Address:</h4>
+                  <h4>27.Address:</h4>
                   <input
                     type="text"
                     name="Guide_address"
@@ -747,7 +755,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Phone No:</h4>
+                  <h4>28.Phone No:</h4>
                   <input
                     type="text"
                     name="Guide_PhnNo"
@@ -765,7 +773,10 @@ function One() {
               <br />
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>16.Title in Catalogue :</h4>
+                  <h4>
+                    29.Title in Catalogue<span className="text-red-600">*</span>
+                    :
+                  </h4>
                   <input
                     type="text"
                     name="catalog_title"
@@ -777,7 +788,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>17.Title of MSS:</h4>
+                  <h4>30.Title of MSS:</h4>
                   <input
                     type="text"
                     name="MSS_title"
@@ -789,7 +800,9 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>19.Subject:</h4>
+                  <h4>
+                    31.Subject<span className="text-red-600">*</span>:
+                  </h4>
                   <input
                     type="text"
                     name="subject"
@@ -802,7 +815,7 @@ function One() {
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
                   <h4>
-                    20.Author<span className="text-red-600">*</span>:
+                    32.Author<span className="text-red-600">*</span>:
                   </h4>
                   <input
                     type="text"
@@ -818,7 +831,7 @@ function One() {
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
                   <h4>
-                    21.Manuscripts Hypothecated to:
+                    33.Manuscripts Hypothecated to:
                     <span className="text-red-600">*</span>:
                   </h4>
                   <input
@@ -832,7 +845,9 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>22.Scribe:</h4>
+                  <h4>
+                    34.Scribe<span className="text-red-600">*</span>:
+                  </h4>
                   <input
                     type="text"
                     name="scribe"
@@ -847,7 +862,7 @@ function One() {
 
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Source of MSS:</h4>
+                  <h4>35.Source of MSS:</h4>
                   <input
                     type="text"
                     name="MSS_source"
@@ -857,7 +872,9 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>MRC Name</h4>
+                  <h4>
+                    36.MRC Name<span className="text-red-600">*</span>:
+                  </h4>
                   <input
                     type="text"
                     name="MRC_Name"
@@ -872,7 +889,7 @@ function One() {
 
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4> Accession Number</h4>
+                  <h4>37.Accession Number</h4>
                   <input
                     type="text"
                     name=" Accession_Number"
@@ -883,22 +900,12 @@ function One() {
                     // className="m-4 bg-blue-400"
                   />
                 </label>
-                <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>MRC Name</h4>
-                  <input
-                    type="text"
-                    name="MRC_Name"
-                    value={form1Data.MRC_Name || ""}
-                    onChange={handleForm1InputChange}
-                    required
-                    placeholder="NA if not aplicable"
-                    // className="m-4 bg-blue-400"
-                  />
-                </label>
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Manuscript Number</h4>
+                  <h4>
+                    38.Manuscript Number<span className="text-red-600">*</span>:
+                  </h4>
                   <input
                     type="text"
                     name=" Accession_Number"
@@ -910,7 +917,10 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  <h4>Institute/ Repository Name</h4>
+                  <h4>
+                    39.Institute/ Repository Name
+                    <span className="text-red-600">*</span>:
+                  </h4>
                   <input
                     type="text"
                     name="InstituteRepository_Name"
@@ -926,13 +936,15 @@ function One() {
               <br />
               <br />
               <h2 className="font-bold">
-                23.Technical Section - Manuscript Details
+                Technical Section - Manuscript Details
               </h2>
               <br />
               <br />
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  24.Research topic:
+                  <div>
+                    40.Research topic<span className="text-red-600">*</span>:
+                  </div>
                   <input
                     type="text"
                     name="Manu_Topic"
@@ -943,7 +955,9 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  25.Subject:
+                  <div>
+                    41.Subject<span className="text-red-600">*</span>:
+                  </div>
                   <input
                     type="text"
                     name="Manu_Subject"
@@ -956,7 +970,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  26.Size of manuscript in centimetres Length/Width (E.g.:
+                  42.Size of manuscript in centimetres Length/Width (E.g.:
                   24x14) :
                   <input
                     type="text"
@@ -968,7 +982,7 @@ function One() {
                 </label>
 
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  27.Binding Details:
+                  43.Binding Details:
                   <input
                     type="text"
                     name="Manu_binding"
@@ -980,7 +994,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  28.Date of Commencement:
+                  44.Date of Commencement:
                   <input
                     type="date"
                     name="date_of_collection"
@@ -991,7 +1005,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2  w-[50%] font-bold">
-                  29.Estimated Duration-{" "}
+                  45.Estimated Duration-{" "}
                   <span className="text-red-700">
                     Note: Expected duration of at least two years from
                     commencement of the study/ as per university rules and
@@ -1030,7 +1044,7 @@ function One() {
                 <div className="flex flex-col md:flex-row w-[100%] ">
                   <div>
                     <h2 className="text-lg font-bold">
-                      30. Status<span className="text-red-600">*</span>:
+                      46. Status<span className="text-red-600">*</span>:
                     </h2>
                   </div>
                   <div>
@@ -1069,7 +1083,9 @@ function One() {
                     {/* Add the text input for the custom option */}
                     {form1Data.status === "custom" && (
                       <label className="flex items-center">
-                        <span className="mb-2 ml-2">Please specify:</span>
+                        <span className="mb-2 ml-2">
+                          Please specify<span className="text-red-600">*</span>:
+                        </span>
                         <input
                           type="text"
                           name="custom_status"
@@ -1087,7 +1103,7 @@ function One() {
 
               <div className="flex flex-row w-[100%]" id="part4">
                 <div className="w-[50%] mr-3">
-                  <h2 className="font-bold">31.Script</h2>
+                  <h2 className="font-bold">47.Script</h2>
                   <select
                     name="Script"
                     value={form1Data.Script}
@@ -1195,7 +1211,9 @@ function One() {
                   </select>
                   {selectedScript === "Others" && (
                     <label className="flex items-center p-2">
-                      <span className="ml-2">Please specify:</span>
+                      <span className="ml-2">
+                        Please specify<span className="text-red-600">*</span>:
+                      </span>
                       <input
                         type="text"
                         name="custom_script"
@@ -1207,7 +1225,7 @@ function One() {
                   )}
                 </div>
                 <div className="w-[50%]">
-                  <h2 className="font-bold">32.Language</h2>
+                  <h2 className="font-bold">48.Language</h2>
                   <select
                     name="Language"
                     value={form1Data.Language}
@@ -1591,7 +1609,9 @@ function One() {
                   </select>
                   {selectedlanguage === "Other_Language" && (
                     <label className="flex items-center p-2">
-                      <span className="ml-2">Please specify:</span>
+                      <span className="ml-2">
+                        Please specify<span className="text-red-600">*</span>:
+                      </span>
                       <input
                         type="text"
                         name="custom_language"
@@ -1605,7 +1625,7 @@ function One() {
               </div>
               <br />
               <div className="w-[50%]">
-                <h2 className="font-bold">33.Material</h2>
+                <h2 className="font-bold">49.Material</h2>
                 <br />
                 <select
                   name="Material"
@@ -1667,7 +1687,9 @@ function One() {
                 </select>
                 {selectedScript === "Others" && (
                   <label className="flex items-center p-2">
-                    <span className="ml-2">Please specify:</span>
+                    <span className="ml-2">
+                      Please specify<span className="text-red-600">*</span>:
+                    </span>
                     <input
                       type="text"
                       name="custom_material"
@@ -1681,7 +1703,7 @@ function One() {
 
               <br />
               <br />
-              <h2 className="font-bold">34. Condition of MSS</h2>
+              <h2 className="font-bold">50. Condition of MSS</h2>
               <div className="flex flex-col md:flex-row flex-wrap">
                 <div className="md:w-1/2 lg:w-1/3 p-2">
                   <label className="flex items-center p-2">
@@ -1814,7 +1836,7 @@ function One() {
               </h2>
               <div className="w-[100%] flex flex-row">
                 <label className="flex flex-col p-2 font-bold w-[50%]">
-                  Probable Date of original Manuscript:
+                  51.Probable Date of original Manuscript:
                   <input
                     type="text"
                     name="MSS_Year"
@@ -1824,7 +1846,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2 font-bold w-[50%] ">
-                  Probable Date of current Manuscript :
+                  52.Probable Date of current Manuscript :
                   <input
                     type="text"
                     name="data_data"
@@ -1837,7 +1859,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <label className="flex flex-col p-2 font-bold w-[50%]">
-                  Place of Writing :
+                  53.Place of Writing :
                   <input
                     type="text"
                     name="place_of_writing"
@@ -1848,7 +1870,7 @@ function One() {
                   />
                 </label>
                 <label className="flex flex-col p-2 font-bold w-[50%] ">
-                  State & Union Territory :
+                  54.State And Union Territory :
                   <select
                     name="StateOrUnionTerritory"
                     value={form1Data.StateOrUnionTerritory}
@@ -1901,7 +1923,7 @@ function One() {
               </div>
               <div className="flex flex-row w-[100%]">
                 <div className="w-[50%]">
-                  <h2 className="font-bold">35.Manuscript Date Samvat</h2>
+                  <h2 className="font-bold">55.Manuscript Date Samvat</h2>
                   <select
                     name="Date_Samvat"
                     value={form1Data.Date_Samvat}
@@ -1965,7 +1987,7 @@ function One() {
                   </select>
                 </div>
                 <div className="w-[50%]">
-                  <h2 className="font-bold">36.Manuscript Date</h2>
+                  <h2 className="font-bold">56.Manuscript Date</h2>
 
                   <select
                     name="Manu_date_christian"
@@ -2043,7 +2065,7 @@ function One() {
 
                 <br />
                 <br />
-                <h2 className="font-bold">38.Source of Manuscript</h2>
+                <h2 className="font-bold">57.Source of Manuscript</h2>
                 <br />
                 <center>
                   <select
@@ -2500,7 +2522,9 @@ function One() {
 
                 <div>
                   <label className="flex flex-col p-2 w-[50%]">
-                    <h2 className="font-bold">39.Flyleaf text</h2>
+                    <h2 className="font-bold">
+                      58.Flyleaf text<span className="text-red-600">*</span>:
+                    </h2>
                     <input
                       type="text"
                       name="flyleaf_text"
@@ -2512,7 +2536,9 @@ function One() {
                     />
                   </label>
                   <label className="flex flex-col p-2 w-[50%]">
-                    <h2 className="font-bold">40.Beginning line</h2>
+                    <h2 className="font-bold">
+                      59.Beginning line<span className="text-red-600">*</span>:
+                    </h2>
                     <input
                       type="text"
                       name="Beginning_line"
@@ -2525,7 +2551,10 @@ function One() {
                   </label>
 
                   <label className="flex flex-col p-2 w-[50%]">
-                    <h2 className="font-bold">41.Colophon / Ending line</h2>
+                    <h2 className="font-bold">
+                      60.Colophon / Ending line
+                      <span className="text-red-600">*</span>:
+                    </h2>
                     <input
                       type="text"
                       name="ColophonEnding_line"
@@ -2539,7 +2568,7 @@ function One() {
 
                   <label className="flex flex-col p-2 w-[50%]">
                     <h2 className="font-bold">
-                      42.Additional Information if any
+                      61.Additional Information if any
                     </h2>
                     <input
                       type="text"
@@ -2637,6 +2666,7 @@ function One() {
               <br />
               <div className="flex flex-col w-[100%] text-justify p-4">
                 <div className="flex flex-col">
+                  <h3 className="text-black">62.Declaration</h3>
                   <label className="flex items-center">
                     <input
                       type="checkbox"

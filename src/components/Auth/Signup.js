@@ -55,7 +55,6 @@ function Signup() {
       <br />
       <br />
 
-    
       <br />
       <br />
       {message?.msg && <div>{message?.msg}</div>}
@@ -68,19 +67,20 @@ function Signup() {
 
         <div className="flex flex-col shadow-xl w-[100%] md:w-[40%] form">
           <center>
-          <div className="flex flex-col justify-center items-center w-[100%] md:w-[50%] p-4">
-            <br />
-            <img src={logo} alt="" className="w-[100px] h-[100px]" />
-            <br />
-            <h1 className="text-xl font-bold">
-              National Institute of Ayurveda
-            </h1>
-            <h4 className="">
-              Deemed to be University(De Novo) Ministry of AYUSH, Govt. of India
-            </h4>
-          </div>
+            <div className="flex flex-col justify-center items-center w-[100%] md:w-[50%] p-4">
+              <br />
+              <img src={logo} alt="" className="w-[100px] h-[100px]" />
+              <br />
+              <h1 className="text-xl font-bold">
+                National Institute of Ayurveda
+              </h1>
+              <h4 className="">
+                Deemed to be University(De Novo) Ministry of AYUSH, Govt. of
+                India
+              </h4>
+            </div>
           </center>
-         
+
           <form
             action=""
             onSubmit={handleSubmit}
@@ -202,12 +202,14 @@ function Signup() {
             </label>
 
             {/* <SecurityCode correctCode="1234" onSuccess={handleSubmit} /> */}
-<center>
-<button className="button w-[90%]">Sign Up</button>
-
-</center>
+            <center>
+              <button className="button w-[90%]">Sign Up</button>
+            </center>
             <p>
               Already Registered? <Link to="/login">Login</Link>
+            </p>
+            <p>
+              Forgot Password? <Link to="/forgetpass">Reset Password</Link>
             </p>
           </form>
         </div>

@@ -13,7 +13,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="justify-center mb-2 text-white dark:text-gray-400">
+          <p className="justify-center mb-2 dark:text-gray-400">
             <p>
               In the context of the Ayurveda Manuscripts Research Registry of
               India, A manuscript registry is a database or collection of
@@ -35,7 +35,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               Currently, the research registration data set is the same for all
               types of Manuscript studies
@@ -51,7 +51,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               Submission/upload of Permission letter/approval letter from
               Institution, Manuscript repository centre (if any). In addition,
@@ -66,7 +66,7 @@ export default function DefaultAccordion() {
           <p className="">4. Where do these documents have to be submitted?</p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               As AMRRI is a paperless system, submissions are all online and
               these documents are to be uploaded into the system while filling
@@ -84,7 +84,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>No, there are no fees for registering a research</p>
           </p>
         </Accordion.Content>
@@ -96,7 +96,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               A reputable Registrant, Researcher or User is authorized to
               register the Manuscript registry in the AMRRI. The "Registrant"
@@ -114,7 +114,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2 dark:text-gray-400">
             <p>
               In the future, the AYUSH ministry will make registration of
               Ayurveda manuscript-related research to avoid repetition and also
@@ -130,7 +130,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>All kinds of studies related to Ayurveda Manuscript</p>
           </p>
         </Accordion.Content>
@@ -143,7 +143,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               Concern form/Approval form wherever applicable is mandatory. In
               addition, submission of approval from the Institution, Manuscript
@@ -160,7 +160,7 @@ export default function DefaultAccordion() {
           </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               No certificate is issued upon registration. AMRRI number may be
               quoted wherever required as the registered would be viewable and
@@ -177,7 +177,7 @@ export default function DefaultAccordion() {
           <p className="">11. Where do these documents have to be submitted?</p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>
               AMRRI is a paperless system. All submissions must be made online,
               and all documents (Soft copies) must be uploaded to the database
@@ -193,30 +193,39 @@ export default function DefaultAccordion() {
           <p className="">12. Are there any fees for registering in AMRRI?</p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
+          <p className="mb-2  dark:text-gray-400">
             <p>No</p>
           </p>
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
         <Accordion.Title>
-          <p className="">13.	What if my questions or concerns are not answered here?</p>
+          <p className="">
+            13. What if my questions or concerns are not answered here?
+          </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
-            <p>If you have any additional questions or concerns, send an email to www.ammri.in  with the subject "AMRRI number" in the body.</p>
+          <p className="mb-2  dark:text-gray-400">
+            <p>
+              If you have any additional questions or concerns, send an email to
+              www.ammri.in with the subject "AMRRI number" in the body.
+            </p>
           </p>
         </Accordion.Content>
       </Accordion.Panel>
       <Accordion.Panel>
         <Accordion.Title>
           <p className="">
-14.	Can I make changes in the Ayurveda Manuscript study details after it is registered?
-</p>
+            14. Can I make changes in the Ayurveda Manuscript study details
+            after it is registered?
+          </p>
         </Accordion.Title>
         <Accordion.Content>
-          <p className="mb-2 text-white dark:text-gray-400">
-            <p>To make changes in registered Ayurveda Manuscript study. Please follow SOP (which we will update soon on the website)</p>
+          <p className="mb-2  dark:text-gray-400">
+            <p>
+              To make changes in registered Ayurveda Manuscript study. Please
+              follow SOP (which we will update soon on the website)
+            </p>
           </p>
         </Accordion.Content>
       </Accordion.Panel>

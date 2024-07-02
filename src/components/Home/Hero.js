@@ -8,8 +8,6 @@ const manu2 = require("../img/manu2.jpg");
 const manu3 = require("../img/manu3.jpg");
 const manu4 = require("../img/manu4.jpg");
 
-
-
 function Hero() {
   return (
     // <section class="">
@@ -74,10 +72,7 @@ function Hero() {
 
     <Carousel className="h-[50%]">
       <div className="relative w-full h-full">
-        <img
-          src={manu1}
-          className="object-cover w-full h-full"
-        />
+        <img src={manu1} className="object-cover w-full h-full" />
         <div className="absolute inset-0 grid w-full h-full place-items-center bg-black/75">
           <div className="w-3/4 text-center md:w-2/4">
             <Typography
@@ -85,33 +80,25 @@ function Hero() {
               color="white"
               className="mb-4 text-sm md:text-4xl lg:text-5xl"
             >
-             Ayurveda Manuscripts Research Registry of India (AMRRI)
+              Ayurveda Manuscripts Research Registry of India (AMRRI)
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 opacity-80"
-            >
-           
-            </Typography>
+            ></Typography>
             <div className="flex justify-center gap-2">
-             <Link to="/vision">
-             <Button size="lg" color="white">
-                Explore
-              </Button>
-             </Link>
-            
-              
+              <Link to="/vision">
+                <Button size="lg px-3 py-2 rounded-sm" color="white">
+                  Explore
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="relative w-full h-full">
-        <img
-          src={manu2}
-          alt="image 2"
-          className="object-cover w-full h-full"
-        />
+        <img src={manu2} alt="image 2" className="object-cover w-full h-full" />
         <div className="absolute inset-0 grid items-center w-full h-full bg-black/75">
           <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
             <Typography
@@ -125,27 +112,19 @@ function Hero() {
               variant="lead"
               color="white"
               className="mb-12 opacity-80"
-            >
-             
-            </Typography>
+            ></Typography>
             <div className="flex gap-2">
               <Link to="/vision">
-              <Button size="lg" color="white">
-                Explore
-              </Button>
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
               </Link>
-            
-            
             </div>
           </div>
         </div>
       </div>
       <div className="relative w-full h-full">
-        <img
-          src={manu4}
-          alt="image 3"
-          className="object-cover w-full h-full"
-        />
+        <img src={manu4} alt="image 3" className="object-cover w-full h-full" />
         <div className="absolute inset-0 grid items-end w-full h-full bg-black/75">
           <div className="w-3/4 pb-12 pl-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
             <Typography
@@ -153,22 +132,19 @@ function Hero() {
               color="white"
               className="mb-4 text-sm md:text-4xl lg:text-5xl"
             >
-             Ayurveda Manuscripts Research Registry of India (AMRRI)
+              Ayurveda Manuscripts Research Registry of India (AMRRI)
             </Typography>
             <Typography
               variant="lead"
               color="white"
               className="mb-12 text-sm opacity-80"
-            >
-              
-            </Typography>
+            ></Typography>
             <div className="flex gap-2">
-              
-             <Link to="/vision">
-             <Button size="lg" color="white">
-                Explore
-              </Button>
-             </Link>
+              <Link to="/vision">
+                <Button size="lg" color="white">
+                  Explore
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
